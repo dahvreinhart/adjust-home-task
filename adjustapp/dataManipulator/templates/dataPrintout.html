@@ -1,0 +1,28 @@
+{% load templateUtil %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Data Printout</title>
+    </head>
+    <body>
+        <h1>Data Printout</h1>
+        <br/>
+        <p><b>{{ quantity }} matching records found:</b></p>
+        <br/>
+        <table width="1200">
+            <tr>
+                {% for fieldName in fieldsToDisplay %}
+                <td><b>{{ fieldName|upper }}</b></td>
+                {% endfor %}
+            </tr>
+        {% for record in records %}
+        <tr>
+            {% for fieldName in fieldsToDisplay %}
+            <td>{{ record|get_item:fieldName }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
