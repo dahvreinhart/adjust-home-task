@@ -98,7 +98,7 @@ def parseFilterParams(filters):
     Build the query syntax to be used in the WHERE section of the eventual DB call.
 
     Field params must be in the format:
-        filters=NOT?|fieldName|arithmeticOperator|value|logicalOperator?, ...
+        filters=NOT|field|arithmeticOperator|value|logicalOperator, ...
 
         Where the 'NOT' and 'logicalOperator' terms are optional
     """
